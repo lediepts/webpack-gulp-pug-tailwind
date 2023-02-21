@@ -1,0 +1,77 @@
+@use "sass:math";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-base;
+  background-color: #ffffff;
+}
+
+@import "./slideTop";
+
+.mouseIcon {
+  width: 30px;
+  height: 50px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  &::before {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: sdb 2s infinite;
+    animation: sdb 2s infinite;
+    box-sizing: border-box;
+  }
+  &::after {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    content: "";
+    margin-left: -9px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#menuBtn {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 16px rgb(0 0 0 / 15%);
+  cursor: pointer;
+  span {
+  }
+}

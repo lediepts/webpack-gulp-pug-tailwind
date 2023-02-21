@@ -1,0 +1,40 @@
+meta(charset="UTF-8")
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+meta(http-equiv="X-UA-Compatible" content="ie=edge")
+meta(name="keywords" content= keywords)
+
+title #{title}
+link(rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon")
+
+meta(name="description" content= ogDesc)
+//- OG
+meta(property="og:locale" content=ogLocale)
+meta(property="og:title", content= title)
+meta(property="og:type", content= ogType)
+meta(property="og:site_name", content= title)
+meta(property="og:url", content= relativeOGUrl(ogUrl))
+meta(property="og:image", content= relativeOGUrl(ogImage))
+meta(property="og:description", content= ogDesc)
+meta(name="twitter:card" content="summary_large_image")
+meta(name="twitter:url", content= relativeOGUrl(ogUrl))
+meta(name="twitter:title", content= title)
+meta(name="twitter:site", content= twitterSite ? twitterSite : title)
+meta(name="twitter:creator", content= twitterSite ? twitterSite : "@")
+meta(name="twitter:image", content= relativeOGUrl(ogImage))
+meta(name="twitter:description", content= ogDesc)
+script.
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-12313159-5"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function () {
+  var ga = document.createElement("script");
+  ga.type = "text/javascript";
+  ga.async = true;
+  ga.src =
+  ("https:" == document.location.protocol
+  ? "https://ssl"
+  : "http://www") + ".google-analytics.com/ga.js";
+  var s = document.getElementsByTagName("head")[0];
+  s.appendChild(ga)
+  })();

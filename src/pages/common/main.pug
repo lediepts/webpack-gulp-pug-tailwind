@@ -1,0 +1,20 @@
+include ./variables
+
+block variables
+
+doctype html
+html(lang=lang)
+  head
+    include ./head.pug
+    block css
+      link(rel="stylesheet" href="index.css")
+  body
+    include /components/header
+    block body
+    #toTopBtn.move-top(class="fixed bg-red-500 text-white w-12 h-12 bottom-8 right-4 rounded-full shadow opacity-0 transition-opacity duration-300 cursor-pointer pointer-events-none")
+      svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512")
+        path(fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"
+          d="M112 328l144-144 144 144")
+    include /components/footer
+    script(type="module" src="/js/home.js")
+    block js
